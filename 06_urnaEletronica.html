@@ -19,12 +19,41 @@
     d) O candidato vencedor.
     */
 
-    //ENTRADA
+        let voto;
+        let votosJoaozinho = 0;
+        let votosMariazinha = 0;
+        let votosNulos = 0;
+        let votosBrancos = 0;
+        let totalVotos = 0;
+
+        do {
+            voto = Number(prompt("As opções são:\n1. Candidato Joãozinho\n2. Candidato Mariazinha\n3. Nulo\n4. Branco\n0. Sair\n\nEntre com o seu voto:"));
+
+            switch (voto) {
+                case 1:
+                    votosJoaozinho++;
+                    totalVotos++;
+                    break;
+                case 2:
+                    votosMariazinha++;
+                    totalVotos++;
+                    break;
+                case 3:
+                    votosNulos++;
+                    totalVotos++;
+                    break;
+                case 4:
+                    votosBrancos++;
+                    totalVotos++;
+                    break;
+                case 0:
+                    // Sair
+                    break;
+                default:
+                    alert("Voto inválido! Tente novamente.");
+            }
+        } while (voto !== 0);
 
 
-    //PROCESSAMENTO
-
-
-    //SAÍDA
 
 </script>

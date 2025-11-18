@@ -11,11 +11,39 @@
     */
 
     //ENTRADA
+        let nome = prompt("Digite seu nome (mais de 3 caracteres): ");
+        let idade = Number(prompt("Digite sua idade (0 a 150): "));
+        let salario = Number(prompt("Digite seu salário (maior que zero): "));
+        let sexo = prompt("Digite seu sexo ('f' ou 'm'): ").toLowerCase();
+        let estadoCivil = prompt("Digite seu estado civil ('s', 'c', 'v', 'd'): ").toLowerCase();
 
+    //PROCESSAMENTO 
+        while (nome.length <= 3) {
+            alert("Nome inválido! Deve ter mais de 3 caracteres.");
+            nome = prompt("Digite seu nome (mais de 3 caracteres): ");
+        }
 
-    //PROCESSAMENTO
+        while (idade < 0 || idade > 150) {
+            alert("Idade inválida! Deve estar entre 0 e 150.");
+            idade = Number(prompt("Digite sua idade (0 a 150): "));
+        }
 
+        while (salario <= 0) {
+            alert("Salário inválido! Deve ser maior que zero.");
+            salario = Number(prompt("Digite seu salário (maior que zero): "));
+        }
+
+        while (sexo !== 'f' && sexo !== 'm') {
+            alert("Sexo inválido! Deve ser 'f' ou 'm'.");
+            sexo = prompt("Digite seu sexo ('f' ou 'm'): ").toLowerCase();
+        }
+
+        while (!['s', 'c', 'v', 'd'].includes(estadoCivil)) {
+            alert("Estado civil inválido! Deve ser 's', 'c', 'v' ou 'd'.");
+            estadoCivil = prompt("Digite seu estado civil ('s', 'c', 'v', 'd'): ").toLowerCase();
+        }
 
     //SAÍDA
+   alert("Dados cadastrados com sucesso!");
 
 </script>

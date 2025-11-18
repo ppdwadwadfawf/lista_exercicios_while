@@ -6,11 +6,19 @@
     */
 
     //ENTRADA
+    let notas = Number(prompt ("Digite uma nota entre 0 e 10: "));
+    
 
+  //PROCESSAMENTO
 
-    //PROCESSAMENTO
+    
+   while (notas < 0 || notas > 10) {
+        alert ("Valor inválido! Tente novamente.");
+        notas = Number(prompt ("Digite uma nota entre 0 e 10: "));
+    }
 
 
     //SAÍDA
+    alert ("Nota válida! Você digitou: " + notas);
 
 </script>

@@ -6,11 +6,17 @@
     */
 
     //ENTRADA
-
-
+        const senhaCorreta = "1234";
+        let senhaUsuario = prompt("Digite a senha (4 números inteiros): ");
     //PROCESSAMENTO
+        while (senhaUsuario !== senhaCorreta) {
+            alert("Senha Incorreta! Tente novamente.");
+            senhaUsuario = prompt("Digite a senha (4 números inteiros): ");
+        }
+        alert("Senha Correta!");
 
 
     //SAÍDA
+    alert("Acesso permitido!");
 
 </script>

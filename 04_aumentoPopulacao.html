@@ -6,11 +6,22 @@
     */
 
     //ENTRADA
+        let populacao1 = 80000;
+        let taxaCrescimentoA = 0.03;
+        let populacao2 = 200000;
+        let taxaCrescimentoB = 0.015;
+        let anos = 0;
 
 
     //PROCESSAMENTO
-
+    while (populacao1 < populacao2) {
+        populacao1 += populacao1 * taxaCrescimentoA;
+        populacao2 += populacao2 * taxaCrescimentoB;
+        anos++;
+    }
 
     //SAÍDA
+    alert("Após " + anos + " anos, a população do país 1 será de " + Math.round(populacao1) + " habitantes.");
+    alert("Após " + anos + " anos, a população do país 2 será de " + Math.round(populacao2) + " habitantes.");
 
 </script>

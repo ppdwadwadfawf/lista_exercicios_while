@@ -12,12 +12,51 @@
     Finalize a entrada de dados ao ser digitada uma idade negativa.
     */
 
-    //ENTRADA
+        let totalSalarios = 0;
+        let contadorPessoas = 0;
+        let maiorIdade = -Infinity;
+        let menorIdade = Infinity;
+        let quantidadeMulheres = 0;
+        let menorSalario = Infinity;
+        let idadeMenorSalario = null;
+        let sexoMenorSalario = null;
+
+        while (true) {
+            let idade = Number(prompt("Digite a idade (negativa para sair): "));
+            if (idade < 0) {
+                break;
+            }
+
+            let sexo = prompt("Digite o sexo ('M' ou 'F'): ").toUpperCase();
+            let salario = Number(prompt("Digite o salário: "));
+
+            totalSalarios += salario;
+            contadorPessoas++;
+
+            if (idade > maiorIdade) {
+                maiorIdade = idade;
+            }
+            if (idade < menorIdade) {
+                menorIdade = idade;
+            }
+            if (sexo === 'F') {
+                quantidadeMulheres++;
+            }
+            if (salario < menorSalario) {
+                menorSalario = salario;
+                idadeMenorSalario = idade;
+                sexoMenorSalario = sexo;
+            }
+        }
 
 
-    //PROCESSAMENTO
+    
+        let mediaSalarios = totalSalarios / contadorPessoas;
 
-
-    //SAÍDA
+        alert("Média dos salários do grupo: " + mediaSalarios.toFixed(2));
+        alert("Maior idade do grupo: " + maiorIdade);
+        alert("Menor idade do grupo: " + menorIdade);
+        alert("Quantidade de mulheres na região: " + quantidadeMulheres);
+        alert("Idade da pessoa com o menor salário: " + idadeMenorSalario + ", Sexo: " + sexoMenorSalario);
 
 </script>
