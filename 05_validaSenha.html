@@ -5,18 +5,25 @@
     Faça um programa que receba uma senha formada de quatro números inteiros, verifique se a senha está correta e, caso não esteja, solicite novamente a senha. Se a senha entrada for a correta, deverá ser apresentada a mensagem “Senha Correta”, caso contrário, “Senha Incorreta”.
     */
 
-    //ENTRADA
-        const senhaCorreta = "1234";
-        let senhaUsuario = prompt("Digite a senha (4 números inteiros): ");
-    //PROCESSAMENTO
-        while (senhaUsuario !== senhaCorreta) {
-            alert("Senha Incorreta! Tente novamente.");
-            senhaUsuario = prompt("Digite a senha (4 números inteiros): ");
-        }
-        alert("Senha Correta!");
 
+     let senhaCadastro = prompt("Cadastre uma senha de 4 números inteiros:");
 
-    //SAÍDA
-    alert("Acesso permitido!");
+    while (senhaCadastro.length !== 4 || isNaN(senhaCadastro)) {
+        alert("Senha inválida! A senha deve ter exatamente 4 números.");
+        senhaCadastro = prompt("Cadastre uma senha de 4 números inteiros:");
+    }
+
+    let senhaValidar = prompt("Digite a senha para validar:");
+
+    while (senhaValidar.length !== 4 || isNaN(senhaValidar)) {
+        alert("Senha inválida! Digite uma senha com 4 números.");
+        senhaValidar = prompt("Digite a senha para validar:");
+    }
+
+    if (senhaCadastro === senhaValidar) {
+        alert("Senha correta!");
+    } else {
+        alert("Senha incorreta!");
+    }
 
 </script>
