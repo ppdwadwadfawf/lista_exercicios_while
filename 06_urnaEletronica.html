@@ -20,7 +20,6 @@
     */
 
 
-    // PROBLEMA: URNA ELETRÔNICA
 
     let voto;
     let votosJoaozinho = 0;
@@ -69,11 +68,10 @@
         }
     } while (voto !== 0);
 
-    // Cálculos das porcentagens
     let porcentNulos = (votosNulos / totalVotos) * 100;
     let porcentBrancos = (votosBrancos / totalVotos) * 100;
 
-    // Determinar o vencedor
+    
     let vencedor = "";
 
     if (votosJoaozinho > votosMariazinha) {
@@ -84,7 +82,7 @@
         vencedor = "Empate";
     }
 
-    // Exibir resultado final
+    
     alert(
         "RESULTADO FINAL\n\n" +
         "Votos Joãozinho: " + votosJoaozinho + "\n" +
