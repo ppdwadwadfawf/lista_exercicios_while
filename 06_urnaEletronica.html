@@ -19,40 +19,82 @@
     d) O candidato vencedor.
     */
 
-        let voto;
-        let votosJoaozinho = 0;
-        let votosMariazinha = 0;
-        let votosNulos = 0;
-        let votosBrancos = 0;
-        let totalVotos = 0;
 
-        do {
-            voto = Number(prompt("As opções são:\n1. Candidato Joãozinho\n2. Candidato Mariazinha\n3. Nulo\n4. Branco\n0. Sair\n\nEntre com o seu voto:"));
+    // PROBLEMA: URNA ELETRÔNICA
 
-            switch (voto) {
-                case 1:
-                    votosJoaozinho++;
-                    totalVotos++;
-                    break;
-                case 2:
-                    votosMariazinha++;
-                    totalVotos++;
-                    break;
-                case 3:
-                    votosNulos++;
-                    totalVotos++;
-                    break;
-                case 4:
-                    votosBrancos++;
-                    totalVotos++;
-                    break;
-                case 0:
-                    // Sair
-                    break;
-                default:
-                    alert("Voto inválido! Tente novamente.");
-            }
-        } while (voto !== 0);
+    let voto;
+    let votosJoaozinho = 0;
+    let votosMariazinha = 0;
+    let votosNulos = 0;
+    let votosBrancos = 0;
+    let totalVotos = 0;
+
+    do {
+        voto = Number(prompt(
+            "As opções são:\n" +
+            "1. Candidato Joãozinho\n" +
+            "2. Candidato Mariazinha\n" +
+            "3. Nulo\n" +
+            "4. Branco\n" +
+            "0. Sair\n\n" +
+            "Entre com o seu voto:"
+        ));
+
+        switch (voto) {
+            case 1:
+                votosJoaozinho++;
+                totalVotos++;
+                break;
+
+            case 2:
+                votosMariazinha++;
+                totalVotos++;
+                break;
+
+            case 3:
+                votosNulos++;
+                totalVotos++;
+                break;
+
+            case 4:
+                votosBrancos++;
+                totalVotos++;
+                break;
+
+            case 0:
+                break;
+
+            default:
+                alert("Voto inválido! Tente novamente.");
+        }
+    } while (voto !== 0);
+
+    // Cálculos das porcentagens
+    let porcentNulos = (votosNulos / totalVotos) * 100;
+    let porcentBrancos = (votosBrancos / totalVotos) * 100;
+
+    // Determinar o vencedor
+    let vencedor = "";
+
+    if (votosJoaozinho > votosMariazinha) {
+        vencedor = "Joãozinho";
+    } else if (votosMariazinha > votosJoaozinho) {
+        vencedor = "Mariazinha";
+    } else {
+        vencedor = "Empate";
+    }
+
+    // Exibir resultado final
+    alert(
+        "RESULTADO FINAL\n\n" +
+        "Votos Joãozinho: " + votosJoaozinho + "\n" +
+        "Votos Mariazinha: " + votosMariazinha + "\n" +
+        "Votos Nulos: " + votosNulos + " (" + porcentNulos.toFixed(2) + "%)\n" +
+        "Votos Brancos: " + votosBrancos + " (" + porcentBrancos.toFixed(2) + "%)\n\n" +
+        "Candidato vencedor: " + vencedor
+    );
+
+
 
 
 
